@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musify | All in one</title>
+  <link rel="icon" href="../static/iamges/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../static/css/main.css">
+</head>
+
+<body>
+
+  <!--!Navbar-->
+  <nav class="navbar navbar-expand navbar-dark fixed-top">
+    <!--?For tablet size and desktop-->
+    <div class="container-fluid d-none d-md-flex">
+      <a class="navbar-brand" href="#">
+        <img src="../static/iamges/logo.png" alt="" width="40" height="40" class="d-inline-block align-text-top">
+      </a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Podcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Stream</a>
+        </li>
+        <li class="nav-item dropdown">
+          <i class="fas fa-ellipsis-h nav-link dropdown-toggl mt-1" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">ASMR</a></li>
+            <li><a class="dropdown-item" href="#">Book</a></li>
+            <li><a class="dropdown-item" href="#">MV</a></li>
+            <li><a class="dropdown-item" href="#">Clip</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Developers</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex mx-auto">
+        <div class="mr-auto d-flex justify-content-center">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn-slash">/</button>
+          <button class="btn btn-light lg-search-btn disable" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+      </form>
+      <ul class="navbar-nav mb-2 mb-lg-0 profile-area">
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="{{ profile }}" width="40" height="40" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">
+                <img src="{{ profile }}" width="30" height="30" class="rounded-circle">
+                <p>Signed in as</p>
+                <h6 style="margin-top: -15px;">Ghost</h6>
+              </a></li>
+            <li style="margin-top: -10px;">
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Your profile</a></li>
+            <li><a class="dropdown-item" href="#">Your channel</a></li>
+            <li><a class="dropdown-item" href="#">Following</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Updates</a></li>
+            <li><a class="dropdown-item" href="#">Help</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--?For mobile soze-->
+    <div class="container-fluid d-md-none">
+      <a class="navbar-brand" href="#">
+        <img src="../static/iamges/logo.png" alt="" width="40" height="40" class="d-inline-block align-text-top">
+      </a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-1">
+          <a class="nav-link" aria-current="page" href="#"><i class="fas fa-home"></i></a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link" href="#"><i class="fas fa-play"></i></a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link" href="#"><i class="fas fa-podcast"></i></a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link" href="#"><i class="fas fa-satellite-dish"></i></a>
+        </li>
+        <li class="nav-item dropdown">
+          <i class="fas fa-ellipsis-h nav-link dropdown-toggl mt-1" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">ASMR</a></li>
+            <li><a class="dropdown-item" href="#">Book</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Developers</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mb-2 mb-lg-0 profile-area d-flex justify-content-around">
+        <li class="nav-item dropdown nav-link" style="margin-right: 20px;">
+          <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fas fa-search"></i>
+          </a>
+          <ul class="dropdown-menu sm-form" aria-labelledby="navbarDropdown">
+            <form class="d-flex mx-auto">
+              <div class="mr-auto d-flex justify-content-center">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-light disable sm-search-btn" type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="../static/iamges/profile.png" width="40" height="40" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">
+                <img src="../static/iamges/profile.png" width="30" height="30" class="rounded-circle">
+                <p>Signed in as</p>
+                <h6 style="margin-top: -15px;">Ghost</h6>
+              </a></li>
+            <li style="margin-top: -10px;">
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Your profile</a></li>
+            <li><a class="dropdown-item" href="#">Your channel</a></li>
+            <li><a class="dropdown-item" href="#">Following</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Updates</a></li>
+            <li><a class="dropdown-item" href="#">Help</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--!Carousel-->
+  <div class="container-fluid pt-5">
+    <div class="row mt-5">
+      <!--Left side (Carousel)-->
+      <div class="col-12 col-lg-8">
+        <div id="top-carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner rounded shadow">
+            <div class="carousel-item active">
+              <div class="carousel-main">
+                <img class="d-block w-100" src="../static/iamges/Songs/Love-shtop-background.jpg" alt="First slide">
+                <div class="position-absolute w-100 h-100 carousel-details-layer1"></div>
+                <div class="position-absolute w-100 h-100 carousel-details-layer2">
+                  <a href="#"><img src="../static/iamges/Songs/Love-shot.png" alt=""></a>
+                  <div class="details p-1 p-md-5">
+                    <a href="#">
+                      <h1>Love shot</h1>
+                    </a>
+                    <a href="#">
+                      <h3>EXO</h3>
+                    </a>
+                    <h5>Songs |
+                      <span class="badge badge-success"><a href="#">POP</a></span>
+                      <span class="badge badge-info"><a href="#">KPOP</a></span>
+                    </h5>
+                    <hr>
+                    <table class="mx-auto d-none d-md-block">
+                      <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                      </tr>
+                      <tr>
+                        <td>#1</td>
+                        <td>Love shot</td>
+                        <td>3:20</td>
+                      </tr>
+                      <tr>
+                        <td>#2</td>
+                        <td>Trauma</td>
+                        <td>3:42</td>
+                      </tr>
+                      <tr>
+                        <td>#3</td>
+                        <td>Sign</td>
+                        <td>3:14</td>
+                      </tr>
+                      <tr>
+                        <td>#4</td>
+                        <td>24/7</td>
+                        <td>3:03</td>
+                      </tr>
+                      <tr>
+                        <td>#5</td>
+                        <td>Smile On My Face</td>
+                        <td>3:39</td>
+                      </tr>
+                      <tr>
+                        <td>#6</td>
+                        <td>Love Shot – Chinese version</td>
+                        <td>3:20</td>
+                      </tr>
+                      <tr>
+                        <td>#7</td>
+                        <td>Tempo</td>
+                        <td>3:45</td>
+                      </tr>
+                      <tr>
+                        <td>#8</td>
+                        <td>Wait</td>
+                        <td>4:09</td>
+                      </tr>
+                      <tr>
+                        <td>#9</td>
+                        <td>Gravity</td>
+                        <td>3:55</td>
+                      </tr>
+                      <tr>
+                        <td>#10</td>
+                        <td>Damage</td>
+                        <td>3:30</td>
+                      </tr>
+                      <tr>
+                        <td>#11</td>
+                        <td>Oasis</td>
+                        <td>3:14</td>
+                      </tr>
+                      <tr>
+                        <td>#12</td>
+                        <td>Tempo – Chinese version</td>
+                        <td>3:45</td>
+                      </tr>
+                    </table>
+                    <div class="d-flex justify-content-around align-items-center mt-4">
+                      <a href="#">
+                        <h6>Lyrics</h6>
+                      </a>
+                      <button class="btn rounded-circle"><i class="fas fa-play"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-main">
+                <img class="d-block w-100" src="../static/iamges/Songs/future nostalgia-background.jpg"
+                  alt="First slide">
+                <div class="position-absolute w-100 h-100 carousel-details-layer1"></div>
+                <div class="position-absolute w-100 h-100 carousel-details-layer2">
+                  <a href="#"><img src="../static/iamges/Songs/future nostalgia.jpg" alt=""></a>
+                  <div class="details p-1 p-md-5">
+                    <a href="#">
+                      <h1>Future Nostalgia</h1>
+                    </a>
+                    <a href="#">
+                      <h3>Dua Lipa</h3>
+                    </a>
+                    <h5>Songs |
+                      <span class="badge badge-success"><a href="#">POP</a></span>
+                    </h5>
+                    <hr>
+                    <table class="mx-auto d-none d-md-block">
+                      <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                      </tr>
+                      <tr>
+                        <td>#1</td>
+                        <td>Future Nostalgia</td>
+                        <td>3:05</td>
+                      </tr>
+                      <tr>
+                        <td>#2</td>
+                        <td>Cool</td>
+                        <td>3:30</td>
+                      </tr>
+                      <tr>
+                        <td>#3</td>
+                        <td>Levitating</td>
+                        <td>3:24</td>
+                      </tr>
+                      <tr>
+                        <td>#4</td>
+                        <td>Hallucinate</td>
+                        <td>3:29</td>
+                      </tr>
+                      <tr>
+                        <td>#5</td>
+                        <td>Break My Heart</td>
+                        <td>3:42</td>
+                      </tr>
+                      <tr>
+                        <td>#6</td>
+                        <td>Boys Will Be Boys</td>
+                        <td>3:46</td>
+                      </tr>
+                      <tr>
+                        <td>#7</td>
+                        <td>Don't Start Now</td>
+                        <td>3:45</td>
+                      </tr>
+                      <tr>
+                        <td>#8</td>
+                        <td>Physical</td>
+                        <td>3:03</td>
+                      </tr>
+                      <tr>
+                        <td>#9</td>
+                        <td>Pretty Please</td>
+                        <td>3:15</td>
+                      </tr>
+                      <tr>
+                        <td>#10</td>
+                        <td>Love Again</td>
+                        <td>3:18</td>
+                      </tr>
+                      <tr>
+                        <td>#11</td>
+                        <td>Good in bed</td>
+                        <td>3:15</td>
+                      </tr>
+                      <tr>
+                        <td>#12</td>
+                        <td>Forever</td>
+                        <td>2:37</td>
+                      </tr>
+                    </table>
+                    <div class="d-flex justify-content-around align-items-center mt-4">
+                      <a href="#">
+                        <h6>Lyrics</h6>
+                      </a>
+                      <button class="btn rounded-circle"><i class="fas fa-play"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#top-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#top-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <!--Right side-->
+      <div class="col-12 col-lg-4 right-side">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-12 p-0 mt-5 mt-lg-0 d-flex justify-content-center">
+            <div class="contain">
+              <img src="../static/iamges/Songs/Amouranth-Background.jpg" alt="">
+              <div class="layer-1"></div>
+              <div class="layer-2 p-4">
+                <h4>Discover new world with</h4>
+                <h5>Amouranth's ASMR</h5>
+                <span class="mt-5 badge badge-danger p-1"><a href="#">ASMR</a></span>
+                <button class="btn rounded-circle"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-12 p-0 mt-5 mt-lg-3 d-flex justify-content-center">
+            <div class="contain">
+              <img src="../static/iamges/Songs/MVs-background.jpg" alt="">
+              <div class="layer-1"></div>
+              <div class="layer-2 p-4">
+                <h4>Enjoy your time with</h4>
+                <h5>Discovered MVs</h5>
+                <span class="mt-5 badge badge-primary p-1"><a href="#">MV</a></span>
+                <button class="btn rounded-circle"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script src="../static/js/app.js"></script>
+</body>
+
+</html>

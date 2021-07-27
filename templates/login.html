@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musify | All in one | Login</title>
+  <link rel="stylesheet" href="../static/css/login.css">
+</head>
+
+<body>
+
+  <!-- Form-->
+  <div class="form">
+    <div class="form-toggle"></div>
+    <div class="form-panel one">
+      <div class="form-header">
+        <h1>Welcome Back</h1>
+      </div>
+      <div class="form-content">
+        <form id="login-form" method="POST" action="/login">
+          <div class="alert-danger" id="login-alert">
+            <!--Error goes here-->
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username-login" name="username" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password-login" name="password" />
+          </div>
+          <div class="form-group">
+            <label class="form-remember">
+              <input type="checkbox" / name="remember">Remember Me
+            </label><a class="form-recovery" href="#">Forgot Password?</a>
+          </div>
+          <div class="form-group">
+            <button type="submit">Log In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="form-panel two">
+      <p class="signin-aside-text">Do not have an account</p>
+      <div class="form-header">
+        <h1>Welcome to a new world in signup</h1>
+      </div>
+      <div class="form-content">
+        <form id="signin-form" method="POST" action="/create">
+          <div class="alert-danger" id="signin-alert" style="margin-top: -5%;">
+            <!--Error goes here-->
+
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username-signin" name="username" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password-signin" name="password" />
+          </div>
+          <div class="form-group">
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" id="cpassword-signin" name="cpassword" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="text" id="email-signin" name="email" />
+          </div>
+          <div class="form-group">
+            <button type="submit">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Scripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../static/js/login.js"></script>
+  <script>
+    const do_not_show_alert = {{ show_alert }};
+    if (do_not_show_alert) {
+      // do nothing actually 
+    }
+
+    else {
+      try {
+        $('#{{id_}}').html('{{alert_message}}').css('display', 'flex');
+
+      }
+
+      catch (err) {
+        // do nothing actually
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>

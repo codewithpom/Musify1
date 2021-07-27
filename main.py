@@ -15,6 +15,7 @@ def hello_world():
 def login_page():
     if request.method == "GET":
         
+
         return render_template("login.html", show_alert="true")
 
     elif request.method == "POST":
@@ -58,7 +59,7 @@ def create():
 def logout():
     response = make_response("Logged Out")
 
-    response.set_cookie('account', '', expires=0)
+    response.set_cookie('username', '', expires=0)
     response.set_cookie('password', '', expires=0)
     return response
 
